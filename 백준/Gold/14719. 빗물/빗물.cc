@@ -21,31 +21,20 @@ int main(){
 
     int st = min(arr[0], arr[w-1]);
     
-    for(int i = st; i <= h; i++){
-        int left = 0;
-        int right = w-1;
-
-        for(int j = 0; j < w; j++){
-            if(arr[left] < arr[j]){
-                left = j;
-            }
-            if(arr[left] < i){
-                continue;
-            }
-            larr[j] = i;
-
+    int left = 0;
+    int right = w-1;
+    for(int j = 0; j < w; j++){
+        if(arr[left] < arr[j]){
+            left = j;
         }
+        larr[j] = arr[left];
+    }
 
-        for(int j = w - 1; j >= 0; j--){
-            if(arr[right] < arr[j]){
-                right = j;
-            }
-
-            if(arr[right] < i){
-                continue;
-            }
-            rarr[j] = i;
+    for(int j = w-1; j >= 0; j--){
+        if(arr[right] < arr[j]){
+            right = j;
         }
+        rarr[j] = arr[right];
     }
 
     int ans = 0;
