@@ -19,7 +19,7 @@ int main(){
         arr[i] = {{{t1, t2}, t3}, t0};
     }
 
-    sort(arr, arr+n);
+    sort(arr, arr+n, greater<>());
     pair<pair<int, int>, int> prev = {{-1, -1}, -1};
     int rank = -1;
     for(int i = 0; i < n; i++){
@@ -34,6 +34,7 @@ int main(){
             break;
         }
     }
+
 
     return 0;   
 }
