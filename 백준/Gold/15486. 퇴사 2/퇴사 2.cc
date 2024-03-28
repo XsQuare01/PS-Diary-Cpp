@@ -1,5 +1,5 @@
+#pragma GCC optimize("Ofast")
 #define MAX 1500000
-#define AMAX 27
 #define INF 987654321
 
 #include<bits/stdc++.h>
@@ -30,5 +30,6 @@ int main(){
         dp[i+t] = max(dp[i+t], dp[i] + p);
     }
     cout << max(dp[N], dp[N+1]);
+
     return 0;
 }
