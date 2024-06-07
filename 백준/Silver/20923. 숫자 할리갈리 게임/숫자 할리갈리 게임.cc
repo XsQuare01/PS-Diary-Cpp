@@ -11,26 +11,36 @@ int arr2[MAX];
 int t1 = 0; int t2 = 0;
 queue<int> q1, q2, r1, r2;
 
-bool WinPlayer1(){
+void WinPlayer1(){
     if(t1 == WIN || t2 == WIN){
-        // cout << t1 << " " << t2 << endl;
-        // cout << "1 Win" << endl;
-        return true;
+        t1 = 0; t2 = 0;
+        while(!r2.empty()){
+            int t = r2.front();
+            r2.pop();
+            q1.push(t);
+        }
+        while(!r1.empty()){
+            int t = r1.front();
+            r1.pop();
+            q1.push(t);
+        }
     }
-    return false;
 }
 
-bool WinPlayer2(){
-    if(!t1 || !t2){
-        return false;
-    }
+void WinPlayer2(){
     if(t1 + t2 == WIN){
-        //Debug
-        // cout << t1 << " " << t2 << endl;
-        // cout << "2 Win" << endl;
-        return true;
+        t1 = 0; t2 = 0;
+        while(!r1.empty()){
+            int t = r1.front();
+           r1.pop();
+            q2.push(t);
+        }
+        while(!r2.empty()){
+            int t = r2.front();
+            r2.pop();
+            q2.push(t);
+        }
     }
-    return false;
 }
 
 int main(){
@@ -56,32 +66,8 @@ int main(){
                 return 0;
             }
 
-            if(WinPlayer1()){
-                t1 = 0; t2 = 0;
-                while(!r2.empty()){
-                    int t = r2.front();
-                    r2.pop();
-                    q1.push(t);
-                }
-                while(!r1.empty()){
-                    int t = r1.front();
-                    r1.pop();
-                    q1.push(t);
-                }
-            }
-            if(WinPlayer2()){
-                t1 = 0; t2 = 0;
-                while(!r1.empty()){
-                    int t = r1.front();
-                    r1.pop();
-                    q2.push(t);
-                }
-                while(!r2.empty()){
-                    int t = r2.front();
-                    r2.pop();
-                    q2.push(t);
-                }
-            }
+            WinPlayer1();
+            WinPlayer2();
         }
         else{
             t2 = q2.front();
@@ -92,36 +78,10 @@ int main(){
                 cout << "do";
                 return 0;
             }
-            if(WinPlayer1()){
-                t1 = 0; t2 = 0;
-                while(!r2.empty()){
-                    int t = r2.front();
-                    r2.pop();
-                    q1.push(t);
-                }
-                while(!r1.empty()){
-                    int t = r1.front();
-                    r1.pop();
-                    q1.push(t);
-                }
-            }
-            if(WinPlayer2()){
-                t1 = 0; t2 = 0;
-                while(!r1.empty()){
-                    int t = r1.front();
-                    r1.pop();
-                    q2.push(t);
-                }
-                while(!r2.empty()){
-                    int t = r2.front();
-                    r2.pop();
-                    q2.push(t);
-                }
-            }
+            WinPlayer1();
+            WinPlayer2();
         }
     }
-
-    // cout << q1.size() << " " << q2.size() << "\n";
 
     if(q1.size() > q2.size()){
         cout << "do";
@@ -138,4 +98,3 @@ int main(){
 
     return 0;
 }
- 
