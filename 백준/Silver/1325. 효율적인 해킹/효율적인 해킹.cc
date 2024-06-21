@@ -72,7 +72,7 @@ int main(){
         varr[b].push_back(a);
     }
     for(int i = 1; i <= N; i++){
-        rarr[i] = DFS(i);
+        rarr[i] = BFS(i);
         if(rarr[i] > maximum){
             rq = queue<int>();
             rq.push(i);
