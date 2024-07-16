@@ -17,7 +17,6 @@ struct cmp{
 };
 
 int N, M;
-int arr[MAX];
 priority_queue<int, vector<int>, cmp> pq;
 
 int main() {
@@ -31,15 +30,16 @@ int main() {
         pq.push(t);
     }
     for(int i = 0; i < M; i++){
-        cin >> arr[i];
+        int _input;
+        cin >> _input;
         int t = pq.top();
         pq.pop();
 
-        if(t < arr[i]){
+        if(t < _input){
             cout << 0;
             return 0;
         }
-        t -= arr[i];
+        t -= _input;
         pq.push(t);
     }
     cout << 1;
