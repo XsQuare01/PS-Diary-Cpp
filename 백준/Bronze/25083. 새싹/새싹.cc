@@ -1,0 +1,21 @@
+#define MAX 200000
+#define MOD 13
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int H, M;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    cout << "         ,r'\"7\n";
+    cout << "r`-_   ,'  ,/\n";
+    cout << " \\. \". L_r'\n";
+    cout << "   `~\\/\n";
+    cout << "      |\n";
+    cout << "      |";
+    return 0;
+}
