@@ -7,6 +7,7 @@
 using namespace std;
 
 int arr[MAX][MAX];
+int flag[MAX][MAX][INF] = {0, };
 int R, C;
 int darr[][2] = {
     {-1, 0},
@@ -56,14 +57,20 @@ int main(){
             if(!InBoundary(ty, tx)){
                 continue;
             }
-            
+
             // 이미 밟은 숫자
             if(arr[ty][tx] == 0 || !AlreadyVisited(p_hash, arr[ty][tx])){
+                flag[ty][tx][p_hash] = 1;
                 q.push({ty, tx, p_hash, cnt+1});
                 continue;
             }
 
-            int n_hash = p_hash + pow(2, arr[ty][tx]-1);
+            if(flag[ty][tx][p_hash | (1 << (arr[ty][tx] - 1))]){
+                continue;
+            };
+            flag[ty][tx][p_hash | (1 << (arr[ty][tx] - 1))] = 1;
+
+            int n_hash = p_hash | (1 << (arr[ty][tx] - 1));
             
             if(n_hash == 63){
                 cout << cnt + 1;
