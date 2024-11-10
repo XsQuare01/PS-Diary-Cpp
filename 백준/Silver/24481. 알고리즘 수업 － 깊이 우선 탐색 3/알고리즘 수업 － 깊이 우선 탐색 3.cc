@@ -9,16 +9,13 @@ using namespace std;
 int N, M, R;
 vector<int> edge[MAX + 1];
 int height[MAX + 1];
-int parr[MAX + 1];
-bool flag[MAX + 1];
 
 void DFS(int index){
     for(auto a: edge[index]){
         // 이미 방문
-        if(flag[a]){
+        if(height[a] != -1){
             continue;
         }
-        flag[a] = true;
         height[a] = height[index] + 1;
         DFS(a);
     }
@@ -46,7 +43,6 @@ int main(){
     }
 
     height[R] = 0;
-    flag[R] = true;
     DFS(R);
 
     for(int i = 1; i <= N; i++){
