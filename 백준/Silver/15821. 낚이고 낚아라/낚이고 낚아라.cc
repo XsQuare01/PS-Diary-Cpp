@@ -6,7 +6,7 @@
 using namespace std;
 
 int K, N;
-vector<int> dist;
+vector<long long> dist;
 
 int main() {
     ios::sync_with_stdio(0);
@@ -17,11 +17,11 @@ int main() {
     for(int i = 0; i < N; i++){
         int P;
         cin >> P;
-        int maximum = -1;
+        long long maximum = -1;
         for(int j = 0; j < P; j++){
-            int y, x;
+            long long y, x;
             cin >> y >> x;
-            int tdist = y * y + x * x;
+            long long tdist = y * y + x * x;
 
             maximum = max(maximum, tdist);
         }
