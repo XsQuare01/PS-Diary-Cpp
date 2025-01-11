@@ -177,9 +177,7 @@ int main()
 		cycle_set.clear();
 		cycle = false;
 		if (DFS(i) != -1) {
-            if(checkPolygon()){
-                res++;
-            }
+            res++;
 			
 		}
 	}
