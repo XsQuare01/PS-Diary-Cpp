@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#define MAX 100
+#define MAX 100000
 #define INF 300000
 
 #include<bits/stdc++.h>
@@ -7,6 +7,8 @@
 using namespace std;
 
 int K;
+int idx = 0;
+int arr[MAX];
 stack<int> st;
 
 int main() {
@@ -18,19 +20,16 @@ int main() {
 		int t;
 		cin >> t;
 		if(!t){
-			st.pop();
+			idx--;
 		}
 		else{
-			st.push(t);
+			arr[idx++] = t;
 		}
 	}
 
 	int sum = 0;
-	while(!st.empty()){
-		int t = st.top();
-		st.pop();
-
-		sum += t;
+	for(int i = 0; i < idx; i++){
+		sum += arr[i];
 	}
 	cout << sum;
 	return 0;
