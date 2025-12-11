@@ -8,16 +8,16 @@
 using namespace std;
 
 int N;
-vector<bool> vec;
+string str2;
 
-void recursive(int st, int ed, int cnt, bool flag){
+void recursive(string& str, int st, int ed, int cnt, bool flag){
     if(cnt > N){
         return ;
     }
 
     if(flag){
         for(int i = st; i < ed; i++){
-            vec[i] = true;
+            str[i] = ' ';
         }
     }
     else{
@@ -25,9 +25,9 @@ void recursive(int st, int ed, int cnt, bool flag){
         int le = st + gap;
         int ri = le + gap;
 
-        recursive(st, le, cnt+1, false);
-        recursive(le, ri, cnt+1, true);
-        recursive(ri, ed, cnt+1, false);
+        recursive(str, st, le, cnt+1, false);
+        recursive(str, le, ri, cnt+1, true);
+        recursive(str, ri, ed, cnt+1, false);
     }
 
     return ;
@@ -40,20 +40,10 @@ int main()
     cout.tie(nullptr);
 
     while(cin >> N){
-        vec = vector<bool>();
-        vec.resize(pow(3, N));
+        string str(pow(3, N), '-');
+        recursive(str, 0, pow(3, N), 0, false);
 
-        recursive(0, pow(3, N), 0, false);
-
-        for(int i = 0; i < pow(3, N); i++){
-            if(!vec[i]){
-                cout << "-";
-            }
-            else{
-                cout << " ";
-            }
-        }
-        cout << "\n";
+        cout << str << "\n";
     }
 	return 0;
 }
