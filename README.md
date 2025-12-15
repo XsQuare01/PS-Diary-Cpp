@@ -1,2 +1,47 @@
 # PS-Diary-Cpp
-This is an auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+
+백준 온라인 저지(BOJ) 알고리즘 문제 풀이를 기록하는 저장소입니다.  
+문제 해결 과정과 코드 구현을 정리하며, 알고리즘 사고력과 구현 능력 향상을 목표로 합니다.
+
+---
+
+## 📌 목적
+- 알고리즘 및 자료구조 기본기 강화
+- 문제 해결 과정 기록 및 복습
+- 코딩 테스트 대비
+
+---
+
+## 📂 디렉토리 구조
+📦 백준
+
+┣ 📂 Bronze
+
+┣ 📂 Silver
+
+┣ 📂 Gold
+
+┣ 📂 Platinum
+
+┗ 📜 README.md
+
+> 문제 난이도(Bronze ~ Platinum) 기준으로 분류합니다.
+
+---
+
+## 🛠 사용 언어
+- C++
+
+---
+
+## ✍️ 기록 방식
+- 문제 번호 및 제목 기준으로 파일 작성
+- 핵심 아이디어 또는 주의할 점은 코드 내 주석으로 기록
+
+---
+
+## 📈 목표
+- 꾸준한 문제 풀이 및 난이도 상승
+- 알고리즘 패턴 정리 및 재사용 가능한 사고 구조 확립
+
+
